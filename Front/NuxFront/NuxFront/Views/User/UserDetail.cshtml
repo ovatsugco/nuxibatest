@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "UserDetail";
+}
+
+@model  NuxFront.Models.User
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/UserScripts.js"></script>
+<style>
+    .button {
+        border: none;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .button1 {
+        background-color: white;
+        color: black;
+        border: 2px solid #4CAF50;
+    }
+    .button1:hover {
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+<div>
+
+    <div class="modal-header">
+        @*<button type="button" class="close" data-dismiss="modal" aria-hidden="true">Regresar</button>*@
+        @Html.ActionLink("Regresar", "Index", "User", null, new  { @class = "close"} )
+        <h4 class="modal-title" id="myModalLabel">User > User Information</h4>
+    </div>
+    <hr />
+    <table>
+
+        <tbody>
+            <tr>
+                <td > Id: </td><td>@Html.DisplayFor(model => model.Id)</td>
+            </tr>
+            <tr>
+                <td>Name: </td><td>@Html.DisplayFor(model => model.Name)</td>
+            </tr>
+            <tr>
+                <td>User Name: </td><td>@Html.DisplayFor(model => model.Username)</td>
+            </tr>
+            <tr>
+                <td>E mail: </td><td>@Html.DisplayFor(model => model.Email)</td>
+            </tr>
+            <tr>
+                <td>WebSite: </td><td>@Html.DisplayFor(model => model.Website)</td>
+            </tr>
+            <tr>
+                <td>Company</td><td>@Html.DisplayFor(model => model.Company)<td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td><input value="Posts" type="button" class="button button1" onclick='window.location.href = "@Url.Action("UserPosts", "User", new { idUser = Model.Id })";' /></td>
+                <td><input value="Todos" type="button" class="button button1" onclick='window.location.href = "@Url.Action("UserTasks", "User", new { idUser = Model.Id })";' /></td>
+
+            </tr>
+        </tfoot>
+    </table>
+        
+</div>
+
+
+

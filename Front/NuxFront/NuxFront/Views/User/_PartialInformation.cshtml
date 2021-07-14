@@ -1,0 +1,48 @@
+﻿@model  NuxFront.Models.User
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/UserScripts.js"></script>
+@*<div id='modalDescription' class='modal'>
+    <div class="modal-dialog">
+        <div class="modal-content">*@
+            @*<div id='myModalContent'>*@
+                <div>
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                        <h4 class="modal-title" id="myModalLabel">User Information</h4>
+                    </div>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayFor(model => model.Id)
+                        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Username)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Email)
+                        </dd>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Website)
+                        </dd>
+                        @*<dd>
+                    @Html.DisplayFor(model => model.Address.City + ' '  + model.Address.Geo.Lat + ' ' + model.Address.Geo.Lng)
+                </dd>*@
+
+                    </dl>
+                </div>
+
+
+            @*</div>*@
+            
+        @*</div>
+    </div>
+
+</div*@>

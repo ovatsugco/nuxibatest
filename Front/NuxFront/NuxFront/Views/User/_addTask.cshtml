@@ -1,0 +1,30 @@
+﻿@model NuxFront.Models.Task
+
+<div class="row">
+    <br />
+    @using (Html.BeginForm("SaveData", "User", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+<div class="col-md-3 form-horizontal">
+    <br />
+    <label class="form-check-label" for="exampleCheck1">User ID</label>
+    @Html.TextBoxFor(item => item.UserId,
+       new { @class = "form-control", placeholder = "User Id", autofocus = "autofocus" })
+    <br />
+    <label class="form-check-label" for="exampleCheck1">Titulo</label>
+    @Html.TextBoxFor(item => item.Title,
+       new { @class = "form-control", placeholder = "Titulo" })
+    @Html.ValidationMessageFor(item => item.Title, null, new { @class = "text-danger" })
+    <br />
+    <label class="form-check-label" for="exampleCheck1">Completado</label>
+    @Html.CheckBoxFor(item => item.Completed,
+       new { @class = "form-check-input", placeholder = "Completado" })
+
+    <br />
+    <button class="btn btn-primary" type="submit">
+        Enviar datos
+    </button>
+    <br />
+</div>
+    }
+</div>

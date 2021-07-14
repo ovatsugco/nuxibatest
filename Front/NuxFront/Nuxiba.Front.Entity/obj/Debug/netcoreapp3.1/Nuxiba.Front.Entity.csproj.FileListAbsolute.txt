@@ -1,0 +1,9 @@
+C:\TestNux\Front\NuxFront\Nuxiba.Front.Entity\bin\Debug\netcoreapp3.1\Nuxiba.Front.Entity.deps.json
+C:\TestNux\Front\NuxFront\Nuxiba.Front.Entity\bin\Debug\netcoreapp3.1\Nuxiba.Front.Entity.dll
+C:\TestNux\Front\NuxFront\Nuxiba.Front.Entity\bin\Debug\netcoreapp3.1\Nuxiba.Front.Entity.pdb
+C:\TestNux\Front\NuxFront\Nuxiba.Front.Entity\obj\Debug\netcoreapp3.1\Nuxiba.Front.Entity.csprojAssemblyReference.cache
+C:\TestNux\Front\NuxFront\Nuxiba.Front.Entity\obj\Debug\netcoreapp3.1\Nuxiba.Front.Entity.AssemblyInfoInputs.cache
+C:\TestNux\Front\NuxFront\Nuxiba.Front.Entity\obj\Debug\netcoreapp3.1\Nuxiba.Front.Entity.AssemblyInfo.cs
+C:\TestNux\Front\NuxFront\Nuxiba.Front.Entity\obj\Debug\netcoreapp3.1\Nuxiba.Front.Entity.csproj.CoreCompileInputs.cache
+C:\TestNux\Front\NuxFront\Nuxiba.Front.Entity\obj\Debug\netcoreapp3.1\Nuxiba.Front.Entity.dll
+C:\TestNux\Front\NuxFront\Nuxiba.Front.Entity\obj\Debug\netcoreapp3.1\Nuxiba.Front.Entity.pdb

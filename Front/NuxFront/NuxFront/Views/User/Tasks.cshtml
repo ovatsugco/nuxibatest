@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Tasks";
+}
+
+@model  List<NuxFront.Models.Task>
+
+<div class="modal-header">
+    @Html.ActionLink("Regresar", "Details", "User", new { id = Model[0].UserId }, new { @class = "close" })
+    <h4 class="modal-title" id="myModalLabel">User > User Information > Tasks</h4>
+</div>
+<hr />
+<div>
+    @*@Html.Partial("_addTask", Model[0])*@
+    @Html.Partial("_addTask", new NuxFront.Models.Task { UserId = Model[0].UserId })
+</div>
+<div class="col-sm-12 table-responsive table-condensed table-sm" style="font-size:small">
+    <table class="table table-hover" id="tablaUsers">
+        @if (Model != null)
+        {
+            <thead class="thead-light">
+                <tr>
+                    <th>User Id </th>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Compelted</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+
+                        <td>
+                            @Html.DisplayFor(item => item[i].UserId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(item => item[i].Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(item => item[i].Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(item => item[i].Completed)
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        }
+    </table>
+</div>

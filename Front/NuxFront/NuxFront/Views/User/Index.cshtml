@@ -1,0 +1,109 @@
+﻿<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/UserScripts.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#btnDetalles").click(function () {
+            $("#cargaDetalle").dialog(
+                {
+                    modal: true,
+                    buttons: {
+                        Ok: function () { $(this).dialog('close'); }
+                    }
+                });
+        });
+    })
+</script>
+
+
+@model  List<NuxFront.Models.User>
+<div class="col-sm-12 table-responsive table-condensed table-sm" style="font-size:small">
+    <table class="table table-hover" id="tablaUsers">
+        @if (Model != null)
+        {
+            <thead class="thead-light">
+                <tr>
+                    <th>Selección </th>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>User NAme</th>
+                    <th>E Mail</th>
+                    <th>Adress</th>
+                    <th>phone</th>
+                    <th>website</th>
+                    <th>company</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <td>@Html.CheckBoxFor(item => item[i].IsChecked, new { onchange = "UserChecked(this)" })</td>
+                        <td>
+                            @Html.DisplayFor(item => item[i].Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(item => item[i].Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(item => item[i].Username)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(item => item[i].Email)
+                        </td>
+                        <td>
+                            @Html.ValueFor(item => item[i].Address.Street)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(item => item[i].Phone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(item => item[i].Website)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(item => item[i].Company)
+                        </td>
+                        <td>
+                            @*<a href="javascript:void(0);" class="anchorDetail" data-id="@Model[i].Id">Detalles</a>*@
+                            @Html.ActionLink("Detail", "Details", "User", new { id = Model[i].Id  }, null)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        }
+    </table>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="cargaDetalle"><h1>ventana modal</h1></div>
+<div id='modalDescription' class='modal'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='myModalContent'>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
